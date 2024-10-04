@@ -20,7 +20,7 @@ const Admin = () => {
                     type="text"
                     name="product"
                     placeholder="Product Name"
-                    className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                    className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                   />
                 </div>
                 <div className="flex flex-col items-start gap-4 sm:flex-row">
@@ -32,7 +32,7 @@ const Admin = () => {
                       type="number"
                       name="price"
                       placeholder="Price"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                   <div className="flex w-full flex-col gap-1">
@@ -43,7 +43,7 @@ const Admin = () => {
                       type="text"
                       name="dimension"
                       placeholder="Dimension"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                   <div className="flex w-full flex-col gap-1">
@@ -54,7 +54,7 @@ const Admin = () => {
                       type="text"
                       name="display"
                       placeholder="Display"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                 </div>
@@ -67,7 +67,7 @@ const Admin = () => {
                       type="text"
                       name="chipset"
                       placeholder="Chipset"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                   <div className="flex w-full flex-col gap-1">
@@ -78,7 +78,7 @@ const Admin = () => {
                       type="number"
                       name="memory"
                       placeholder="Memory"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                   <div className="flex w-full flex-col gap-1">
@@ -89,7 +89,7 @@ const Admin = () => {
                       type="number"
                       name="battery"
                       placeholder="Battery"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                 </div>
@@ -102,7 +102,7 @@ const Admin = () => {
                       type="text"
                       name="front_camera"
                       placeholder="Front Camera"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                   <div className="flex w-full flex-col gap-1">
@@ -113,7 +113,7 @@ const Admin = () => {
                       type="number"
                       name="rear_camera"
                       placeholder="Rear Camera"
-                      className="w-full border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
+                      className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                     />
                   </div>
                 </div>
