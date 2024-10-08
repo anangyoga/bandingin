@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useActionState } from "react";
 
 const Admin = () => {
-  const [state, action] = useActionState(addProduct, null);
+  const [state, action, isLoading] = useActionState(addProduct, null);
   return (
     <main className="mx-auto flex max-w-6xl flex-col border bg-gray-50 sm:h-screen">
       <div className="flex items-center justify-between border border-x-0 bg-white px-4 py-4 sm:px-6">
@@ -162,7 +162,7 @@ const Admin = () => {
           type="submit"
           className="mx-auto flex items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:opacity-90 focus:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-50 sm:w-1/5"
         >
-          Add Product
+          {isLoading ? "Loading..." : "Add Product"}
         </button>
       </form>
     </main>
