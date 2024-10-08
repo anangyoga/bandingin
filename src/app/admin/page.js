@@ -11,7 +11,7 @@ const Admin = () => {
       <div className="flex items-center justify-between border border-x-0 bg-white px-4 py-4 sm:px-6">
         <h1 className="text-xl font-semibold">Hello, Admin</h1>
         <Link
-          href="/admin/product"
+          href="/admin/products"
           className="text-sm font-medium text-blue-500"
         >
           See All Products
