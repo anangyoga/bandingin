@@ -1,10 +1,16 @@
+"use client";
+
+import { addProduct } from "@/actions/actions";
+import { useActionState } from "react";
+
 const Admin = () => {
+  const [state, action] = useActionState(addProduct, null);
   return (
     <main className="mx-auto flex max-w-6xl flex-col border bg-gray-50 sm:h-screen">
       <div className="border border-x-0 bg-white px-4 py-4 sm:px-6">
         <h1 className="text-xl font-semibold">Hello, Admin</h1>
       </div>
-      <form className="flex flex-col pb-5 sm:gap-10">
+      <form action={action} className="flex flex-col pb-5 sm:gap-10">
         <div className="flex flex-col-reverse items-start gap-5 p-4 sm:flex-row sm:p-6">
           <div className="w-full rounded-md border bg-white sm:w-2/3">
             <div className="flex flex-col gap-3">
@@ -17,8 +23,9 @@ const Admin = () => {
                     Product Name
                   </label>
                   <input
+                    required
                     type="text"
-                    name="product"
+                    name="name"
                     placeholder="Product Name"
                     className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
                   />
@@ -29,6 +36,7 @@ const Admin = () => {
                       Price
                     </label>
                     <input
+                      required
                       type="number"
                       name="price"
                       placeholder="Price"
@@ -40,6 +48,7 @@ const Admin = () => {
                       Dimension
                     </label>
                     <input
+                      required
                       type="text"
                       name="dimension"
                       placeholder="Dimension"
@@ -51,6 +60,7 @@ const Admin = () => {
                       Display
                     </label>
                     <input
+                      required
                       type="text"
                       name="display"
                       placeholder="Display"
@@ -64,6 +74,7 @@ const Admin = () => {
                       Chipset
                     </label>
                     <input
+                      required
                       type="text"
                       name="chipset"
                       placeholder="Chipset"
@@ -75,6 +86,7 @@ const Admin = () => {
                       Memory
                     </label>
                     <input
+                      required
                       type="number"
                       name="memory"
                       placeholder="Memory"
@@ -86,6 +98,7 @@ const Admin = () => {
                       Battery
                     </label>
                     <input
+                      required
                       type="number"
                       name="battery"
                       placeholder="Battery"
@@ -99,7 +112,8 @@ const Admin = () => {
                       Front Camera
                     </label>
                     <input
-                      type="text"
+                      required
+                      type="number"
                       name="front_camera"
                       placeholder="Front Camera"
                       className="w-full rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400"
@@ -110,6 +124,7 @@ const Admin = () => {
                       Rear Camera
                     </label>
                     <input
+                      required
                       type="number"
                       name="rear_camera"
                       placeholder="Rear Camera"
