@@ -6,11 +6,7 @@ export default function Home() {
       <h1 className="text-center text-xl font-medium text-green-500">
         Ban Dingin
       </h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nobis
-        assumenda iure sit deserunt quod culpa illo, iste velit quo dignissimos,
-        possimus voluptatibus at perspiciatis qui modi maxime non? Perferendis!
-      </p>
+      <p>terserah</p>
     </main>
   );
 }
