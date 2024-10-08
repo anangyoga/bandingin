@@ -41,3 +41,13 @@ export async function addProduct(prevState, formData) {
 
   return newProduct;
 }
+
+export async function getAllProducts() {
+  const allProducts = await prisma.product.findMany({
+    orderBy: {
+      name: "desc",
+    },
+  });
+
+  return allProducts;
+}
