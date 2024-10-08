@@ -1,14 +1,21 @@
 "use client";
 
 import { addProduct } from "@/actions/actions";
+import Link from "next/link";
 import { useActionState } from "react";
 
 const Admin = () => {
   const [state, action] = useActionState(addProduct, null);
   return (
     <main className="mx-auto flex max-w-6xl flex-col border bg-gray-50 sm:h-screen">
-      <div className="border border-x-0 bg-white px-4 py-4 sm:px-6">
+      <div className="flex items-center justify-between border border-x-0 bg-white px-4 py-4 sm:px-6">
         <h1 className="text-xl font-semibold">Hello, Admin</h1>
+        <Link
+          href="/admin/product"
+          className="text-sm font-medium text-blue-500"
+        >
+          See All Products
+        </Link>
       </div>
       <form action={action} className="flex flex-col pb-5 sm:gap-10">
         <div className="flex flex-col-reverse items-start gap-5 p-4 sm:flex-row sm:p-6">
