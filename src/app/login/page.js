@@ -8,6 +8,7 @@ export default function Page() {
       <div className="flex w-full flex-col gap-3 rounded-lg border p-5 text-center sm:w-[385px]">
         <h1 className="text-lg font-semibold">Welcome to Bandingin</h1>
         <form className="space-y-3 pb-2.5">
+          {/* Untuk layouting elemen kecil-kecilan kaya Form cukup pakai Flexbox. Untuk layouting halaman, baru pakai Grid */}
           <div className="flex flex-col items-start gap-1">
             <label className="text-sm">Email</label>
             <input
@@ -29,6 +30,7 @@ export default function Page() {
           </button>
         </form>
         <hr />
+        {/* NOTE: kalau cuma button, gak perlu pake Form. Cukup button aja, nanti pakai onClick. dan harus jadi Client Component jadi di atas ada 'use client'. Di dalam onClick, panggil functionnya harus pakai ()=> namaFunction(). Kalau langsung namaFunction kaya di action, dia bakal Error. */}
         <button
           onClick={() => loginWithGoogle()}
           className="font-bold text-blue-600"
