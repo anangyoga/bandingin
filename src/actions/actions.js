@@ -60,3 +60,26 @@ export async function deleteProduct(id) {
 
   revalidatePath("/admin/product");
 }
+
+export async function generateAi(prevState, formData) {
+  console.log("clicked");
+  const firstGadget = formData.get("firstGadget");
+  const secondGadget = formData.get("secondGadget");
+
+  const firstGadgetDetails = await prisma.product.findFirst({
+    where: {
+      name: firstGadget,
+    },
+  });
+
+  const secondGadgetDetails = await prisma.product.findFirst({
+    where: {
+      name: secondGadget,
+    },
+  });
+
+  console.log(firstGadgetDetails, "firstGadgetDetails");
+  console.log(secondGadgetDetails, "secondGadgetDetails");
+  console.log(firstGadget, "apa ini firstGadget");
+  console.log(secondGadget, "apa ini secondGadget");
+}
