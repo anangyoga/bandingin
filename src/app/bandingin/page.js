@@ -28,12 +28,12 @@ const Page = () => {
         <div className="flex w-1/2 items-center justify-center">
           <div className="flex flex-col gap-2">
             <h2 className="text-3xl font-semibold">
-              Temukan Gadget Impianmu dalam Sekejap!
+              Temukan Gadget Impian dalam Sekejap!
             </h2>
             <p className="text-lg font-light leading-tight">
               Bingung pilih gadget yang mau dibeli? Bandingin aja pakai Ai.
-              Pilih gadget dan Ai akan membandingkan 2 handphone biar kamu lebih
-              mudah tentukan pilihan.
+              Pilih dan Ai akan membandingkan 2 gadget biar kamu lebih mudah
+              tentukan pilihan.
             </p>
           </div>
         </div>
