@@ -16,6 +16,22 @@ const Page = () => {
           </Link>
         </div>
       </nav>
+
+      <section className="mx-auto flex items-center justify-center sm:max-w-7xl">
+        <div className="w-1/2">
+          <img
+            src="/bandingin.svg"
+            alt="Bandingin Image"
+            className="aspect-square h-[500px]"
+          />
+        </div>
+        <div className="w-1/2">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, vel
+          omnis blanditiis, iste fugit sunt eos vitae aut exercitationem
+          dignissimos facilis atque amet tempora doloribus molestiae fugiat
+          eaque, perspiciatis excepturi.
+        </div>
+      </section>
     </main>
   );
 };
