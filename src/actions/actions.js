@@ -60,3 +60,10 @@ export async function deleteProduct(id) {
 
   revalidatePath("/admin/product");
 }
+
+export async function generateAi(prevState, formData) {
+  console.log("clicked");
+  const phone = formData.get("phone");
+
+  console.log(phone, "apa ini phone");
+}
