@@ -10,26 +10,32 @@ const Page = () => {
         <div>
           <Link
             href="/login"
-            className="rounded-md border px-5 py-2 text-lg font-medium hover:bg-[#4946f8]"
+            className="rounded-md border px-5 py-1 text-base font-medium hover:bg-[#4946f8]"
           >
             Login
           </Link>
         </div>
       </nav>
 
-      <section className="mx-auto flex items-center justify-center sm:max-w-7xl">
-        <div className="w-1/2">
+      <section className="mx-auto my-10 flex items-center justify-center sm:max-w-7xl">
+        <div className="flex w-1/2 items-center justify-center">
           <img
             src="/bandingin.svg"
             alt="Bandingin Image"
-            className="aspect-square h-[500px]"
+            className="aspect-square h-[450px]"
           />
         </div>
-        <div className="w-1/2">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, vel
-          omnis blanditiis, iste fugit sunt eos vitae aut exercitationem
-          dignissimos facilis atque amet tempora doloribus molestiae fugiat
-          eaque, perspiciatis excepturi.
+        <div className="flex w-1/2 items-center justify-center">
+          <div className="flex flex-col gap-2">
+            <h2 className="text-3xl font-semibold">
+              Temukan Gadget Impianmu dalam Sekejap!
+            </h2>
+            <p className="text-lg font-light">
+              Bingung pilih gadget yang mau dibeli? Bandingin aja pakai Ai.
+              Pilih gadget dan Ai akan membandingkan 2 handphone biar kamu lebih
+              mudah tentukan pilihan.
+            </p>
+          </div>
         </div>
       </section>
     </main>
