@@ -30,7 +30,7 @@ const Page = () => {
             <h2 className="text-3xl font-semibold">
               Temukan Gadget Impianmu dalam Sekejap!
             </h2>
-            <p className="text-lg font-light">
+            <p className="text-lg font-light leading-tight">
               Bingung pilih gadget yang mau dibeli? Bandingin aja pakai Ai.
               Pilih gadget dan Ai akan membandingkan 2 handphone biar kamu lebih
               mudah tentukan pilihan.
