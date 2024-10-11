@@ -64,6 +64,22 @@ export async function deleteProduct(id) {
 export async function generateAi(prevState, formData) {
   console.log("clicked");
   const phone = formData.get("phone");
+  const phone2 = formData.get("phone2");
 
+  const phoneDetails = await prisma.product.findFirst({
+    where: {
+      name: phone,
+    },
+  });
+
+  const phoneDetails2 = await prisma.product.findFirst({
+    where: {
+      name: phone2,
+    },
+  });
+
+  console.log(phoneDetails, "phoneDetails");
+  console.log(phoneDetails2, "phoneDetails2");
   console.log(phone, "apa ini phone");
+  console.log(phone2, "apa ini phone2");
 }
