@@ -104,7 +104,7 @@ export async function generateAi(prevState, formData) {
         content: [
           {
             type: "text",
-            text: `${firstGadgetDetails},${secondGadgetDetails}`,
+            text: `${JSON.stringify(firstGadgetDetails)},${JSON.stringify(secondGadgetDetails)}`,
           },
         ],
       },
