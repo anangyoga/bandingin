@@ -9,7 +9,7 @@ export async function GET(req) {
   // code from google
   const code = searchParams.get("code");
   // codeVerifier from cookies
-  const codeVerifier = cookies().get("codeVerifier")?.value;
+  const codeVerifier = (await cookies()).get("codeVerifier")?.value;
 
   // validate the codeVerifier and code => jwt (accesToken)
   const tokens = await google.validateAuthorizationCode(code, codeVerifier);
@@ -40,7 +40,7 @@ export async function GET(req) {
     });
 
     // save session to cookies
-    cookies().set("sessionId", session.id);
+    (await cookies()).set("sessionId", session.id);
     redirect("/"); // move to homepage ("/home")
   }
 
@@ -61,6 +61,6 @@ export async function GET(req) {
   });
 
   // save session to cookies
-  cookies().set("sessionId", session.id);
+  (await cookies()).set("sessionId", session.id);
   redirect("/"); // move to homepage ("/home")
 }
