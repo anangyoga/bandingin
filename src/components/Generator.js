@@ -9,13 +9,16 @@ import Navigation from "./Navigation";
 import GeneratorResult from "./GeneratorResult";
 
 const Generator = ({ products, userData }) => {
-  const [state, action] = useActionState(generateAi, null);
+  const [state, trianInAction] = useActionState(generateAi, null);
+
+  console.log(state, "state");
+  console.log(typeof state, "typeof state");
 
   return (
     <div className="flex h-screen flex-col bg-[#4440FF] text-white">
       <Navigation userData={userData} />
       <form
-        action={action}
+        action={trianInAction}
         className="mx-20 flex flex-col items-center rounded-xl border-black p-4"
       >
         <div className="flex gap-20">
@@ -29,7 +32,7 @@ const Generator = ({ products, userData }) => {
           Generate
         </button>
       </form>
-      <GeneratorResult />
+      {/* {state && <GeneratorResult state={state} />} */}
     </div>
   );
 };
