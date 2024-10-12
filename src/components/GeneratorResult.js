@@ -32,20 +32,19 @@ const GeneratorResult = ({ state, isPending }) => {
       ) : (
         <div className="mx-3 sm:mx-0">
           <label className="mb-2 block text-lg font-semibold">
-            AI Recommendation
+            AI yang Bandingin
           </label>
           <div className="flex w-full flex-col gap-2.5 rounded-md border px-2 py-1 outline-none placeholder:text-sm placeholder:text-slate-400">
             <p>
-              <span className="font-medium">Performa</span>: {state?.performa}
+              <span className="font-medium">Bandingin Performa</span>:{" "}
+              {state?.performa}
             </p>
             <p>
-              <span className="font-medium">
-                Perbandingan harga Berdasarkan Performa
-              </span>
-              : {state?.perbandingan}
+              <span className="font-medium">Bandingin Spesifikasi</span>:{" "}
+              {state?.perbandingan}
             </p>
             <p>
-              <span className="font-medium">Perkiraan Harga Bekas:</span>{" "}
+              <span className="font-medium">Bandingin Harga Bekas:</span>{" "}
               {state?.perkiraan}
             </p>
             <p>

@@ -26,7 +26,7 @@ const Generator = ({ products, userData }) => {
           type="submit"
           className="mx-auto flex items-center justify-center gap-x-2 rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:opacity-90 focus:outline-none disabled:pointer-events-none disabled:opacity-50 md:w-1/5 lg:w-1/12"
         >
-          {isPending ? "Generating..." : "Generate"}
+          {isPending ? "Bandingin..." : "Bandingin"}
         </button>
       </form>
       {state && <GeneratorResult state={state} isPending={isPending} />}

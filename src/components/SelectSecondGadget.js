@@ -6,7 +6,7 @@ const SelectSecondGadget = ({ products }) => {
       <div>
         <select name="secondGadget" className="text-sm font-medium" required>
           <option value="" selected disabled>
-            Select a gadget
+            Pilih gadget...
           </option>
           {products.map((product) => (
             <option key={product.id} value={product.name}>
