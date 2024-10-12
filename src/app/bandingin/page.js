@@ -1,22 +1,10 @@
+import Navigation from "@/components/Navigation";
 import Link from "next/link";
 
 const Page = () => {
   return (
     <main className="flex h-screen flex-col bg-[#4440FF] text-white">
-      <nav className="flex items-center justify-between px-3 py-4 md:px-10 lg:px-40">
-        <Link href="/">
-          <h1 className="text-2xl font-bold sm:text-3xl">Bandingin</h1>
-        </Link>
-        <div>
-          <Link
-            href="/login"
-            className="rounded-md border px-4 py-1 text-base font-medium hover:bg-[#4946f8] sm:px-5 sm:font-medium"
-          >
-            Login
-          </Link>
-        </div>
-      </nav>
-
+      <Navigation title={"Bandingin"} url={"/login"} urlName={"Login"} />
       <section className="mx-auto my-10 flex flex-col items-center justify-center gap-8 sm:max-w-7xl sm:gap-0 md:flex-row">
         <div className="flex items-center justify-center md:w-1/2">
           <img
