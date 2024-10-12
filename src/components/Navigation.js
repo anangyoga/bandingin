@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { logout } from "@/actions/actions";
 
 const Navigation = ({ title, url, urlName, userData }) => {
   return (
