@@ -11,9 +11,6 @@ import GeneratorResult from "./GeneratorResult";
 const Generator = ({ products, userData }) => {
   const [state, action] = useActionState(generateAi, null);
 
-  console.log(state, "state");
-  console.log(typeof state, "typeof state");
-
   return (
     <div className="flex h-screen flex-col bg-[#4440FF] text-white">
       <Navigation userData={userData} />
@@ -32,7 +29,7 @@ const Generator = ({ products, userData }) => {
           Generate
         </button>
       </form>
-      {/* {state && <GeneratorResult state={state} />} */}
+      {state && <GeneratorResult state={state} />}
     </div>
   );
 };

@@ -84,9 +84,6 @@ export async function generateAi(prevState, formData) {
     },
   });
 
-  console.log(firstGadgetDetails, "firstGadgetDetails");
-  console.log(secondGadgetDetails, "secondGadgetDetails");
-
   const response = await openai.chat.completions.create({
     model: "gpt-4o",
     messages: [
@@ -95,7 +92,7 @@ export async function generateAi(prevState, formData) {
         content: [
           {
             type: "text",
-            text: "You are gadget enthusiast, geek-god, and have wide-range knowledge of phone. Your job is giving user suggestion of 2 different phones so user can decide which one is the best for them.\nWhen a user input specifications of 2 phones, you should give a brief of summary.\nAlways answering in bahasa Indonesia.\n\nIMPORTANT\n- please give suggestion of price-to-value\n- please give comparation of performance for each phone, the performance comparation consist of RAM, chipset, and durability\n- give estimation of used price of both products\n- conclusion of what phone to buy\n\nIMPORTANT\n- result DON'T include ```json\n\nIMPORTANT\nThe result should be a valid JSON only with following keys:\n- performa: string\n- perbandingan-harga-berdasarkan-performa: string\n- perkiraan-harga-bekas: string\n- kesimpulan: string",
+            text: "You are gadget enthusiast, geek-god, and have wide-range knowledge of phone. Your job is giving user suggestion of 2 different phones so user can decide which one is the best for them.\nWhen a user input specifications of 2 phones, you should give a brief of summary.\nAlways answering in bahasa Indonesia.\n\nIMPORTANT\n- please give suggestion of price-to-value\n- please give comparation of performance for each phone, the performance comparation consist of RAM, chipset, and durability\n- give estimation of used price of both products\n- conclusion of what phone to buy\n\nIMPORTANT\n- result DON'T include ```json\n\nIMPORTANT\nThe result should be a valid JSON only with following keys:\n- performa: string\n- perbandingan: string\n- perkiraan: string\n- kesimpulan: string",
           },
         ],
       },
@@ -119,12 +116,9 @@ export async function generateAi(prevState, formData) {
     },
   });
 
-  console.log(response.choices[0].message.content, "not parsing");
+  const result = JSON.parse(response.choices[0].message.content);
 
-  // const result = JSON.parse(response.choices[0].message.content);
-  // console.log(result, "ini result");
-
-  // return result;
+  return result;
 }
 
 export async function logout() {
