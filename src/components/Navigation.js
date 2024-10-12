@@ -4,14 +4,16 @@ import { logout } from "@/actions/actions";
 
 const Navigation = ({ title, url, urlName, userData }) => {
   return (
-    <nav className="flex items-center justify-between px-3 py-4 md:px-10 lg:px-40">
+    <nav
+      className={`flex items-center justify-between px-3 py-4 md:px-10 lg:px-40 ${userData ? "border bg-white" : "bg-blue-500"}`}
+    >
       {title && (
         <Link href="/">
           <h1 className="text-2xl font-bold sm:text-3xl">{title}</h1>
         </Link>
       )}
       {userData && (
-        <h1 className="text-xl font-semibold">Halo!! {userData.user.name}</h1>
+        <h1 className="text-xl font-semibold">Halo, {userData.user.name}!</h1>
       )}
 
       {urlName && (
@@ -26,7 +28,7 @@ const Navigation = ({ title, url, urlName, userData }) => {
       {userData && (
         <button
           onClick={() => logout()}
-          className="w-fit rounded-lg border border-transparent bg-white px-3 py-2 text-sm font-medium text-black hover:opacity-90 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          className="w-fit rounded-lg border border-transparent bg-blue-600 px-3 py-2 text-sm font-medium text-white hover:opacity-90 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
         >
           Logout
         </button>
