@@ -5,7 +5,7 @@ import { logout } from "@/actions/actions";
 const Navigation = ({ title, url, urlName, userData }) => {
   return (
     <nav
-      className={`flex items-center justify-between px-3 py-4 md:px-10 lg:px-40 ${userData ? "border bg-white" : "bg-blue-500"}`}
+      className={`flex items-center justify-between px-3 py-4 md:px-10 lg:px-40 ${userData ? "border bg-white" : "border border-x-0 border-t-0 border-white bg-[#4440FF]"}`}
     >
       {title && (
         <Link href="/">
