@@ -17,7 +17,7 @@ const Page = () => {
         </div>
       </nav>
 
-      <section className="mx-auto my-10 flex flex-col items-center justify-center sm:max-w-7xl md:flex-row">
+      <section className="mx-auto my-10 flex flex-col items-center justify-center gap-8 sm:max-w-7xl sm:gap-0 md:flex-row">
         <div className="flex items-center justify-center md:w-1/2">
           <img
             src="/bandingin.svg"
