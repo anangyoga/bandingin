@@ -2,6 +2,8 @@
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export async function addProduct(prevState, formData) {
   const {
@@ -82,4 +84,18 @@ export async function generateAi(prevState, formData) {
   console.log(secondGadgetDetails, "secondGadgetDetails");
   console.log(firstGadget, "apa ini firstGadget");
   console.log(secondGadget, "apa ini secondGadget");
+}
+
+export async function logout() {
+  const sessionId = await cookies().get("sessionId")?.value;
+
+  await prisma.session.delete({
+    where: {
+      id: sessionId,
+    },
+  });
+
+  await cookies().delete("sessionId");
+
+  redirect("/bandingin");
 }
