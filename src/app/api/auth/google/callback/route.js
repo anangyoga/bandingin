@@ -41,7 +41,7 @@ export async function GET(req) {
 
     // save session to cookies
     (await cookies()).set("sessionId", session.id);
-    redirect("/"); // move to homepage ("/home")
+    redirect("/bandingin"); // move to homepage ("/home")
   }
 
   // if not exist create user
@@ -62,5 +62,5 @@ export async function GET(req) {
 
   // save session to cookies
   (await cookies()).set("sessionId", session.id);
-  redirect("/"); // move to homepage ("/home")
+  redirect("/bandingin"); // move to homepage ("/home")
 }

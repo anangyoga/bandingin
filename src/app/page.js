@@ -1,35 +1,40 @@
 import React from "react";
-import Generator from "@/components/Generator";
-import { getAllProducts } from "@/actions/actions";
-import { prisma } from "@/lib/prisma";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import Navigation from "@/components/Navigation";
+import Link from "next/link";
 
-export default async function Page() {
-  const products = await getAllProducts();
-
-  const sessionId = (await cookies()).get("sessionId")?.value;
-
-  if (!sessionId) {
-    redirect("/login");
-  }
-
-  const userData = await prisma.session.findFirst({
-    where: {
-      id: sessionId,
-    },
-    include: {
-      user: true,
-    },
-  });
-
-  if (!userData) {
-    redirect("/login");
-  }
-
+export default function Page() {
   return (
-    <>
-      <Generator products={products} userData={userData} />
-    </>
+    <main className="flex h-screen flex-col bg-[#4440FF] text-white">
+      <Navigation title={"Bandingin"} url={"/login"} urlName={"Login"} />
+      <section className="mx-auto my-10 flex flex-col items-center justify-center gap-8 sm:max-w-7xl sm:gap-0 md:flex-row">
+        <div className="flex items-center justify-center md:w-1/2">
+          <img
+            src="/bandingin.svg"
+            alt="Bandingin Image"
+            className="aspect-square h-[450px]"
+          />
+        </div>
+        <div className="flex items-center justify-center md:w-1/2">
+          <div className="flex flex-col gap-8 px-3 sm:px-0">
+            <div className="flex flex-col gap-1">
+              <h2 className="text-2xl font-semibold sm:text-3xl">
+                Temukan Gadget Impian dalam Sekejap!
+              </h2>
+              <p className="text-lg font-light leading-tight">
+                Bingung pilih gadget yang mau dibeli? Bandingin aja pakai Ai.
+                Bandingin 2 gadget impian biar kamu lebih mudah tentukan
+                pilihan.
+              </p>
+            </div>
+            <Link
+              href={"/login"}
+              className="rounded-md border px-5 py-1 text-center text-base font-medium hover:bg-[#4946f8] sm:w-1/4"
+            >
+              Coba Bandingin
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
