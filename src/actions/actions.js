@@ -124,7 +124,7 @@ export async function generateAi(prevState, formData) {
 }
 
 export async function logout() {
-  const sessionId = await (await cookies()).get("sessionId")?.value;
+  const sessionId = (await cookies()).get("sessionId")?.value;
 
   await prisma.session.delete({
     where: {
@@ -132,7 +132,7 @@ export async function logout() {
     },
   });
 
-  await (await cookies()).delete("sessionId");
+  (await cookies()).delete("sessionId");
 
   redirect("/bandingin");
 }
