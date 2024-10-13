@@ -1,7 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcrypt";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 export async function POST(req) {
   const { email, password } = await req.json();
