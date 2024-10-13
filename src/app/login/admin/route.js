@@ -30,5 +30,5 @@ export async function POST(req) {
 
   (await cookies()).set("sessionId", session.id);
 
-  redirect("/admin");
+  return new Response("Success", { status: 200 });
 }
