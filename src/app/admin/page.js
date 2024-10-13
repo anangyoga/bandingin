@@ -1,6 +1,6 @@
 "use client";
 
-import { addProduct } from "@/actions/actions";
+import { addProduct, logout } from "@/actions/actions";
 import Link from "next/link";
 import { useActionState } from "react";
 
@@ -16,6 +16,12 @@ const Admin = () => {
         >
           See All Products
         </Link>
+        <button
+          onClick={() => logout()}
+          className="text-sm font-medium text-blue-500"
+        >
+          Admin Logout
+        </button>
       </div>
       <form action={action} className="flex flex-col pb-5 sm:gap-10">
         <div className="flex flex-col-reverse items-start gap-5 p-4 sm:flex-row sm:p-6">
