@@ -116,6 +116,8 @@ export async function generateAi(prevState, formData) {
     },
   });
 
+  if (firstGadgetDetails === secondGadgetDetails) return;
+
   const result = JSON.parse(response.choices[0].message.content);
 
   return result;
