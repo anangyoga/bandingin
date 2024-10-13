@@ -134,5 +134,5 @@ export async function logout() {
 
   (await cookies()).delete("sessionId");
 
-  redirect("/bandingin");
+  redirect("/");
 }
