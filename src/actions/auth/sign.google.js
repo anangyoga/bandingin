@@ -11,7 +11,7 @@ export async function loginWithGoogle() {
   const codeVerifier = generateCodeVerifier();
 
   // Match Code
-  cookies().set("codeVerifier", codeVerifier);
+  (await cookies()).set("codeVerifier", codeVerifier);
 
   // url authorization
   const url = await google.createAuthorizationURL(state, codeVerifier, {

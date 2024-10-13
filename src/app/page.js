@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 export default async function Page() {
   const products = await getAllProducts();
 
-  const sessionId = cookies().get("sessionId")?.value;
+  const sessionId = (await cookies()).get("sessionId")?.value;
 
   if (!sessionId) {
     redirect("/login");

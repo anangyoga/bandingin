@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import OpenAI from "openai";
 
 export async function addProduct(prevState, formData) {
   const {
@@ -63,8 +64,11 @@ export async function deleteProduct(id) {
   revalidatePath("/admin/product");
 }
 
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
 export async function generateAi(prevState, formData) {
-  console.log("clicked");
   const firstGadget = formData.get("firstGadget");
   const secondGadget = formData.get("secondGadget");
 
@@ -80,14 +84,45 @@ export async function generateAi(prevState, formData) {
     },
   });
 
-  console.log(firstGadgetDetails, "firstGadgetDetails");
-  console.log(secondGadgetDetails, "secondGadgetDetails");
-  console.log(firstGadget, "apa ini firstGadget");
-  console.log(secondGadget, "apa ini secondGadget");
+  const response = await openai.chat.completions.create({
+    model: "gpt-4o",
+    messages: [
+      {
+        role: "system",
+        content: [
+          {
+            type: "text",
+            text: "You are gadget enthusiast, geek-god, and have wide-range knowledge of phone. Your job is giving user suggestion of 2 different phones so user can decide which one is the best for them.\nWhen a user input specifications of 2 phones, you should give a brief of summary.\nAlways answering in bahasa Indonesia.\n\nIMPORTANT\n- please give suggestion of price-to-value\n- please give comparation of performance for each phone, the performance comparation consist of RAM, chipset, and durability\n- give estimation of used price of both products\n- conclusion of what phone to buy\n\nIMPORTANT\n- result DON'T include ```json\n\nIMPORTANT\nThe result should be a valid JSON only with following keys:\n- performa: string\n- perbandingan: string\n- perkiraan: string\n- kesimpulan: string",
+          },
+        ],
+      },
+      {
+        role: "user",
+        content: [
+          {
+            type: "text",
+            text: `${JSON.stringify(firstGadgetDetails)},${JSON.stringify(secondGadgetDetails)}`,
+          },
+        ],
+      },
+    ],
+    temperature: 1,
+    max_tokens: 2048,
+    top_p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+    response_format: {
+      type: "text",
+    },
+  });
+
+  const result = JSON.parse(response.choices[0].message.content);
+
+  return result;
 }
 
 export async function logout() {
-  const sessionId = await cookies().get("sessionId")?.value;
+  const sessionId = await (await cookies()).get("sessionId")?.value;
 
   await prisma.session.delete({
     where: {
@@ -95,7 +130,7 @@ export async function logout() {
     },
   });
 
-  await cookies().delete("sessionId");
+  await (await cookies()).delete("sessionId");
 
   redirect("/bandingin");
 }
