@@ -61,7 +61,7 @@ export async function deleteProduct(id) {
     where: { id },
   });
 
-  revalidatePath("/admin/product");
+  revalidatePath("/admin/products");
 }
 
 const openai = new OpenAI({
