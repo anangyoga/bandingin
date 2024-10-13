@@ -12,7 +12,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/api/register/users", {
+    const res = await fetch("/register/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
